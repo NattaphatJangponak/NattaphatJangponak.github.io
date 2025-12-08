@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply bg-white text-gray-900 font-sans;
+    }
+}
+
+@layer components {
+
+    /* Resume Section Card Style */
+    .resume-card {
+        @apply bg-white rounded-3xl border-t-8 border-green-500 p-8 shadow-sm relative mb-8 hover:shadow-md transition-shadow;
+    }
+
+    /* Header Style for each section */
+    .resume-section-header {
+        @apply flex items-center gap-3 mb-6 border-b border-gray-100 pb-4;
+    }
+
+    .resume-section-title {
+        @apply text-xl font-bold uppercase tracking-wider text-green-700;
+    }
+
+    .resume-icon-box {
+        @apply w-12 h-12 rounded-full bg-green-50 border-2 border-green-100 text-green-600 flex items-center justify-center text-xl shadow-sm;
+    }
+
+    /* List items */
+    .resume-list-item {
+        @apply flex gap-4 text-sm leading-relaxed mb-3;
+    }
+
+    .resume-arrow {
+        @apply text-green-500 font-light mt-1;
+    }
+
+    /* Education/Job specific */
+    .resume-date {
+        @apply text-[#A0522D] font-bold text-sm ml-auto;
+        /* Brown accent color */
+    }
+
+    .resume-badge {
+        @apply bg-gray-100 px-3 py-1 rounded-full text-xs font-semibold text-gray-700;
+    }
+
+    /* Animations */
+    .animate-fade-in {
+        animation: fadeIn 0.8s ease-out forwards;
+    }
+
+    .animate-slide-up {
+        animation: slideUp 0.8s ease-out forwards;
+        opacity: 0;
+        /* Start hidden */
+    }
+
+    .animate-delay-100 {
+        animation-delay: 0.1s;
+    }
+
+    .animate-delay-200 {
+        animation-delay: 0.2s;
+    }
+
+    .animate-delay-300 {
+        animation-delay: 0.3s;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}

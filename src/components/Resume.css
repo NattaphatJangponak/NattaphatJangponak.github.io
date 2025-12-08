@@ -1,0 +1,265 @@
+.resume-container {
+  max-width: 1200px;
+  width: 100%;
+  background: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative green shape in top left */
+.resume-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  border-radius: 0 0 100% 0;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+/* Header Section */
+.resume-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 40px 30px 40px;
+  border-bottom: 3px solid #4CAF50;
+  position: relative;
+  z-index: 1;
+}
+
+.header-left {
+  flex: 1;
+}
+
+.header-right {
+  flex: 1;
+  text-align: right;
+}
+
+.name {
+  font-size: 36px;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.personal-info p,
+.contact-info p {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.personal-info strong,
+.contact-info strong {
+  color: #4CAF50;
+  font-weight: 600;
+}
+
+/* Content Layout */
+.resume-content {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  gap: 0;
+  position: relative;
+}
+
+/* Left Column */
+.left-column {
+  padding: 30px 40px;
+  background: #f9f9f9;
+  position: relative;
+}
+
+/* Right Column */
+.right-column {
+  padding: 30px 40px;
+  background: white;
+}
+
+/* Profile Picture */
+.profile-picture {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.hexagon {
+  width: 180px;
+  height: 180px;
+  position: relative;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background: #4CAF50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hexagon img {
+  width: 170px;
+  height: 170px;
+  object-fit: cover;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+/* Section Styling */
+.section {
+  margin-bottom: 30px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #4CAF50;
+}
+
+.section-header .icon {
+  font-size: 24px;
+}
+
+.section-header h2 {
+  font-size: 20px;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+/* Summary Text */
+.summary-text {
+  line-height: 1.8;
+  color: #555;
+  font-size: 14px;
+  text-align: justify;
+}
+
+/* Project Items */
+.project-item {
+  margin-bottom: 25px;
+}
+
+.project-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #4CAF50;
+  margin-bottom: 10px;
+}
+
+.project-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.project-list li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  line-height: 1.7;
+  color: #555;
+  font-size: 14px;
+}
+
+.project-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #4CAF50;
+  font-weight: bold;
+}
+
+/* Education Items */
+.education-item {
+  margin-bottom: 20px;
+}
+
+.education-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 8px;
+}
+
+.education-item p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+  margin: 5px 0;
+}
+
+/* Skills */
+.skills-group {
+  margin-bottom: 20px;
+}
+
+.skills-subtitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: #4CAF50;
+  margin-bottom: 8px;
+}
+
+.skills-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.skills-list li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  color: #555;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.skills-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #4CAF50;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .resume-content {
+    grid-template-columns: 1fr;
+  }
+
+  .header-left,
+  .header-right {
+    text-align: left;
+  }
+
+  .resume-header {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .left-column,
+  .right-column {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .name {
+    font-size: 28px;
+  }
+
+  .resume-header {
+    padding: 20px;
+  }
+
+  .left-column,
+  .right-column {
+    padding: 15px;
+  }
+}
+
