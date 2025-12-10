@@ -7,7 +7,7 @@ import HardSkills from './pages/HardSkills'
 
 function App() {
   return (
-    <Router basename={import.meta.env.BASE_URL}>
+    <Router>
       <div className="min-h-screen bg-white">
         <Navigation />
         <Routes>
