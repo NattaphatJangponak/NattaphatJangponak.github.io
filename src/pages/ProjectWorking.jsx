@@ -441,7 +441,7 @@ const ProjectWorking = () => {
               </div>
 
               {/* Caption Pill */}
-              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+              <div className="mt-4 flex justify-center">
                 <div className="bg-black/60 backdrop-blur-md border border-white/10 px-6 py-2 rounded-full shadow-lg">
                   <p className="text-white text-lg font-medium tracking-wide">
                     {selectedImage.label}
