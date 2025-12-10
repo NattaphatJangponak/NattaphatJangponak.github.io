@@ -1,5 +1,5 @@
 import { FaCog, FaUserCog, FaArrowRight, FaJava, FaPython, FaHtml5, FaCss3Alt, FaJs, FaReact, FaVuejs, FaAndroid, FaEye, FaGitAlt, FaGithub, FaFigma, FaRaspberryPi } from 'react-icons/fa';
-import { SiCplusplus, SiTypescript, SiFlutter, SiAdobexd, SiFirebase, SiPostgresql, SiMysql, SiArduino, SiNodered, SiHomeassistant } from 'react-icons/si';
+import { SiCplusplus, SiTypescript, SiFlutter, SiAdobexd, SiDocker, SiFirebase, SiPostgresql, SiMysql, SiArduino, SiNodered, SiHomeassistant } from 'react-icons/si';
 
 const HardSkills = () => {
   return (
@@ -109,6 +109,10 @@ const HardSkills = () => {
                 <h3 className="text-green-800 font-bold">Server</h3>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pl-2">
+                <div className="flex items-center gap-3 p-3 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md hover:border-green-200 transition-all hover:-translate-y-1 group">
+                  <SiDocker className="text-2xl text-blue-500 group-hover:scale-110 transition-transform" />
+                  <span className="font-medium text-gray-700">Docker</span>
+                </div>
                 <div className="flex items-center gap-3 p-3 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md hover:border-green-200 transition-all hover:-translate-y-1 group">
                   <SiFirebase className="text-2xl text-yellow-500 group-hover:scale-110 transition-transform" />
                   <span className="font-medium text-gray-700">Firebase</span>
