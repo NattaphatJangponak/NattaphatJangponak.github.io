@@ -415,20 +415,20 @@ const ProjectWorking = () => {
           onClick={() => setSelectedImage(null)}
         >
           <div className="relative max-w-5xl max-h-[90vh] w-full flex flex-col items-center">
-            {/* Close Button - Visible Style */}
-            <button
-              onClick={() => setSelectedImage(null)}
-              className="absolute -top-12 right-0 md:-right-10 z-50 p-2 group"
-            >
-              <div className="bg-white text-green-600 rounded-full p-2 shadow-lg hover:scale-110 transition-transform hover:bg-green-50">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </div>
-            </button>
-
             {/* Image Container with Glow & Frame */}
             <div className="relative group" onClick={(e) => e.stopPropagation()}>
+              {/* Close Button - Moved Inside */}
+              <button
+                onClick={() => setSelectedImage(null)}
+                className="absolute top-2 right-2 z-50 p-2 group/btn"
+              >
+                <div className="bg-white/80 backdrop-blur-sm text-green-600 rounded-full p-2 shadow-lg hover:scale-110 transition-transform hover:bg-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </div>
+              </button>
+
               {/* Glow Effect */}
               <div className="absolute -inset-1 bg-gradient-to-r from-green-400 to-emerald-600 rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-500"></div>
 

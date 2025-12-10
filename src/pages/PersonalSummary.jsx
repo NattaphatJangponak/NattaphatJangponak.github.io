@@ -32,7 +32,7 @@ const PersonalSummary = () => {
             </div>
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 rounded-full border border-green-200 bg-green-50 flex items-center justify-center text-green-600"><FaEnvelope /></div>
-              <span>j.javatst@gmail.com</span>
+              <span>jj.java1st@gmail.com</span>
             </div>
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 rounded-full border border-green-200 bg-green-50 flex items-center justify-center text-green-600"><FaMapMarkerAlt /></div>
