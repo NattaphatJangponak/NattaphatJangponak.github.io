@@ -23,10 +23,10 @@ import webImg5 from "../asset/web/ArtToy 2024.png";
 import mobileImg from "../asset/web/mobile.png";
 
 
-import aiImg1 from "../asset/ai/1.png";
-import aiImg2 from "../asset/ai/2.png";
-import aiImg3 from "../asset/ai/3.png";
-import aiImg4 from "../asset/ai/4.png";
+// import aiImg1 from "../asset/ai/1.png";
+// import aiImg2 from "../asset/ai/2.png";
+import aiImg3 from "../asset/ai/Segment_0.jpg";
+import aiImg4 from "../asset/ai/Segment ai2_0.png";
 import aiImg5 from "../asset/ai/Prediction of wild blueberry yield.png";
 
 
@@ -349,10 +349,9 @@ const ProjectWorking = () => {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {[
-                      { src: aiImg1, label: "Matrices in computer vision" },
-                      { src: aiImg2, label: "Matrices in computer vision" },
+
                       { src: aiImg3, label: "Matrices in computer vision" },
                       { src: aiImg4, label: "Matrices in computer vision" },
                     ].map((img, index) => (
