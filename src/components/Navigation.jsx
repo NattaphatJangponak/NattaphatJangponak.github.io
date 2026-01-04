@@ -21,7 +21,8 @@ const Navigation = () => {
     <nav className="bg-white sticky top-0 z-50 border-b border-gray-100 mb-8">
       <div className="max-w-7xl mx-auto px-5 py-5 flex flex-wrap justify-between items-center">
         <div className="flex justify-between items-center w-full md:w-auto">
-          <Link to="/" className="no-underline group">
+          <Link to="/" className="no-underline group flex items-center gap-3">
+            <img src="/favicon.png" alt="Logo" className="h-10 w-10 object-contain" />
             <h1 className="text-xl font-bold text-gray-900 m-0 uppercase tracking-wider">
               Nattaphat Jangponak
             </h1>
