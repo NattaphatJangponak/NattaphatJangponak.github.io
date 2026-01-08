@@ -4,21 +4,24 @@ import PersonalSummary from './pages/PersonalSummary'
 import ProjectWorking from './pages/ProjectWorking'
 import Education from './pages/Education'
 import HardSkills from './pages/HardSkills'
+import { LanguageProvider } from './context/LanguageContext'
 
 function App() {
   return (
-    <Router>
-      <div className="min-h-screen bg-white">
-        <Navigation />
-        <Routes>
-          <Route path="/" element={<Navigate to="/personal-summary" replace />} />
-          <Route path="/personal-summary" element={<PersonalSummary />} />
-          <Route path="/project-working" element={<ProjectWorking />} />
-          <Route path="/education" element={<Education />} />
-          <Route path="/hard-skills" element={<HardSkills />} />
-        </Routes>
-      </div>
-    </Router>
+    <LanguageProvider>
+      <Router>
+        <div className="min-h-screen bg-white">
+          <Navigation />
+          <Routes>
+            <Route path="/" element={<Navigate to="/personal-summary" replace />} />
+            <Route path="/personal-summary" element={<PersonalSummary />} />
+            <Route path="/project-working" element={<ProjectWorking />} />
+            <Route path="/education" element={<Education />} />
+            <Route path="/hard-skills" element={<HardSkills />} />
+          </Routes>
+        </div>
+      </Router>
+    </LanguageProvider>
   )
 }
 

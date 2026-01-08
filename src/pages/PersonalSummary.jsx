@@ -1,7 +1,11 @@
 import profileImage from "../asset/image.jpg";
 import { FaUser, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaGithub, FaCalendarAlt, FaBirthdayCake, FaSmile } from 'react-icons/fa';
 
+import { useLanguage } from '../context/LanguageContext';
+
 const PersonalSummary = () => {
+  const { language } = useLanguage();
+
   return (
     <div className="max-w-7xl mx-auto p-8 animate-slide-up">
       {/* Contact & Personal Info Header (visible here for the resume look) */}
@@ -17,7 +21,7 @@ const PersonalSummary = () => {
             />
           </div>
 
-          <div className="mt-6 flex flex-wrap gap-4 text-sm text-gray-600 justify-center md:justify-start">
+          <div className="mt-6 flex flex-wrap gap-4 text-xl font-bold text-gray-600 justify-center md:justify-start">
             <span className="flex items-center gap-1"><FaCalendarAlt className="text-green-600" /> 29 Oct 2002</span>
             <span className="flex items-center gap-1"><FaBirthdayCake className="text-green-600" /> 23 Years</span>
             <span className="flex items-center gap-1"><FaSmile className="text-green-600" /> Nickname: J</span>
@@ -25,7 +29,7 @@ const PersonalSummary = () => {
         </div>
 
         <div className="flex flex-col justify-center">
-          <div className="grid grid-cols-1 gap-3 text-sm text-gray-700 mb-6">
+          <div className="grid grid-cols-1 gap-3 text-2xl font-bold text-gray-700 mb-6">
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 rounded-full border border-green-200 bg-green-50 flex items-center justify-center text-green-600"><FaPhoneAlt /></div>
               <span>+6694-550-9631</span>
@@ -51,15 +55,30 @@ const PersonalSummary = () => {
           <div className="resume-icon-box">
             <FaUser />
           </div>
-          <h2 className="resume-section-title">Personal Summary</h2>
+          <h2 className="resume-section-title">
+            {language === 'th' ? 'ข้อมูลส่วนตัว' : 'Personal Summary'}
+          </h2>
         </div>
 
-        <p className="text-gray-700 leading-relaxed text-justify">
-          I am a recent graduate in Computer and Information Science at the Faculty of Applied Science.
-          I've developed an intense curiosity in coursework related to the Internet of Things and mobile application development.
-          I'm currently searching for an Internship in an Internet of Things company so I could put my outstanding technological talents
-          and gained academic expertise to the best use. I am committed to improving my programming, creativity, and applied abilities
-          while actively seeking out ways to participate in my passion projects and gain priceless experience for improved job output.
+        <p className="text-gray-700 leading-relaxed text-3xl">
+          {language === 'th' ? (
+            <>
+              ผมเพิ่งสำเร็จการศึกษาในสาขาวิทยาการคอมพิวเตอร์และสารสนเทศ จากคณะวิทยาศาสตร์ประยุกต์
+              ผมมีความอยากรู้อยากเห็นอย่างมากในหลักสูตรที่เกี่ยวข้องกับ Internet of Things และการพัฒนาแอปพลิเคชันบนมือถือ
+              ขณะนี้ผมกำลังมองหาที่ฝึกงานในบริษัทด้าน Internet of Things เพื่อที่จะได้ใช้ความสามารถทางเทคโนโลยีที่โดดเด่น
+              และความเชี่ยวชาญทางวิชาการที่ได้รับมาให้เกิดประโยชน์สูงสุด ผมมุ่งมั่นที่จะพัฒนาทักษะการเขียนโปรแกรม ความคิดสร้างสรรค์
+              และความสามารถในการประยุกต์ใช้ ในขณะเดียวกันก็กระตือรือร้นที่จะหาโอกาสในการเข้าร่วมโครงการที่ผมหลงใหล
+              และได้รับประสบการณ์อันล้ำค่าเพื่อผลงานการทำงานที่ดียิ่งขึ้น
+            </>
+          ) : (
+            <>
+              I am a recent graduate in Computer and Information Science at the Faculty of Applied Science.
+              I've developed an intense curiosity in coursework related to the Internet of Things and mobile application development.
+              I'm currently searching for an Internship in an Internet of Things company so I could put my outstanding technological talents
+              and gained academic expertise to the best use. I am committed to improving my programming, creativity, and applied abilities
+              while actively seeking out ways to participate in my passion projects and gain priceless experience for improved job output.
+            </>
+          )}
         </p>
       </div>
     </div>

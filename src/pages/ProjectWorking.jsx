@@ -1,5 +1,6 @@
 import profileImage2 from "../asset/image2.jpg";
 import { useState } from "react";
+import { useLanguage } from "../context/LanguageContext";
 import { FaBriefcase, FaArrowRight, FaEye } from "react-icons/fa";
 import robotImg1 from "../asset/robot/Joy PS2-controlled.png";
 import robotImg2 from "../asset/robot/RFID keycard.png";
@@ -34,6 +35,7 @@ import aiImg5 from "../asset/ai/Prediction of wild blueberry yield.png";
 
 
 const ProjectWorking = () => {
+  const { language } = useLanguage();
   const [selectedImage, setSelectedImage] = useState(null);
 
   const robotImages = [
@@ -68,7 +70,9 @@ const ProjectWorking = () => {
             <div className="resume-icon-box">
               <FaBriefcase />
             </div>
-            <h2 className="resume-section-title">Project and Working</h2>
+            <h2 className="resume-section-title">
+              {language === 'th' ? 'โปรเจกต์และการทำงาน' : 'Project and Working'}
+            </h2>
           </div>
 
           <div className="space-y-8">
@@ -76,7 +80,7 @@ const ProjectWorking = () => {
             <div>
               <div className="flex justify-between items-baseline mb-3">
                 <h3 className="font-bold text-2xl flex items-center gap-2">
-                  Robotics Project
+                  {language === 'th' ? 'โปรเจกต์หุ่นยนต์' : 'Robotics Project'}
                 </h3>
                 <span className="resume-date">[2020-2021]</span>
               </div>
@@ -84,15 +88,15 @@ const ProjectWorking = () => {
               <div className="space-y-2">
                 <div className="resume-list-item">
                   <span className="resume-arrow"><FaArrowRight size={12} className="mt-1.5" /></span>
-                  <span>Joy PS2-controlled robot that tracks lines, performs flips with an Arduino nano board. Using DJI Tello to direct the drone.</span>
+                  <span>{language === 'th' ? 'หุ่นยนต์บังคับจอย PS2 เดินตามเส้นและพลิกตัวได้ด้วยบอร์ด Arduino Nano ใช้ DJI Tello ในการควบคุมโดรน' : 'Joy PS2-controlled robot that tracks lines, performs flips with an Arduino nano board. Using DJI Tello to direct the drone.'}</span>
                 </div>
                 <div className="resume-list-item">
                   <span className="resume-arrow"><FaArrowRight size={12} className="mt-1.5" /></span>
-                  <span>A smart lamp application that makes use of Android Studio to control temperature, humidity, and RGB lighting as well as the weather.</span>
+                  <span>{language === 'th' ? 'แอปพลิเคชันโคมไฟอัจฉริยะ (Smart Lamp) พัฒนาด้วย Android Studio ควบคุมอุณหภูมิ ความชื้น ไฟ RGB และแสดงสภาพอากาศ' : 'A smart lamp application that makes use of Android Studio to control temperature, humidity, and RGB lighting as well as the weather.'}</span>
                 </div>
                 <div className="resume-list-item">
                   <span className="resume-arrow"><FaArrowRight size={12} className="mt-1.5" /></span>
-                  <span>Using an RFID keycard reader to turn on and off a mobile phone's LED display Android Studio.</span>
+                  <span>{language === 'th' ? 'ใช้เครื่องอ่านคีย์การ์ด RFID เพื่อเปิด-ปิดหน้าจอ LED ของโทรศัพท์มือถือ พัฒนาด้วย Android Studio' : 'Using an RFID keycard reader to turn on and off a mobile phone\'s LED display Android Studio.'}</span>
                 </div>
               </div>
 
@@ -120,36 +124,36 @@ const ProjectWorking = () => {
             {/* IoT Project */}
             <div>
               <div className="flex justify-between items-baseline mb-3">
-                <h3 className="font-bold text-2xl">IoT Project</h3>
+                <h3 className="font-bold text-2xl">{language === 'th' ? 'โปรเจกต์ IoT' : 'IoT Project'}</h3>
                 <span className="resume-date">[2023-2025]</span>
               </div>
               <div className="space-y-3">
                 <div className="resume-list-item">
                   <span className="resume-arrow"><FaArrowRight size={12} className="mt-1.5" /></span>
-                  <span>I'm utilizing the Board Nodemcu ESP32, a detector that is The Plastic/Metal bottle Detecting cabinet, for an IOT project I'm working on for Electrical Engineering at KMUTNB.</span>
+                  <span>{language === 'th' ? 'กำลังทำโปรเจกต์ตู้ตรวจจับขวดพลาสติก/โลหะ โดยใช้บอร์ด NodeMCU ESP32 สำหรับภาควิชาวิศวกรรมไฟฟ้า มจพ.' : 'I\'m utilizing the Board Nodemcu ESP32, a detector that is The Plastic/Metal bottle Detecting cabinet, for an IOT project I\'m working on for Electrical Engineering at KMUTNB.'}</span>
                 </div>
                 <div className="resume-list-item">
                   <span className="resume-arrow"><FaArrowRight size={12} className="mt-1.5" /></span>
-                  <span>Using the Board Nodemcu ESP8266 Sensor RFID board, create and Instruct MU Bio-Innovation students in IOT projects.</span>
+                  <span>{language === 'th' ? 'ใช้บอร์ด NodeMCU ESP8266 และเซ็นเซอร์ RFID สร้างสื่อการสอน IoT ให้กับนักศึกษานวัตกรรมชีวภาพ ม.มหิดล' : 'Using the Board Nodemcu ESP8266 Sensor RFID board, create and Instruct MU Bio-Innovation students in IOT projects.'}</span>
                 </div>
                 <div className="resume-list-item">
                   <span className="resume-arrow"><FaArrowRight size={12} className="mt-1.5" /></span>
-                  <span>Smart Mushroom Farm IoT system integrating sensors and computer vision to monitor temperature, humidity, and mushroom growth.</span>
+                  <span>{language === 'th' ? 'ระบบฟาร์มเห็ดอัจฉริยะ (Smart Mushroom Farm) ผสาน IoT และ Computer Vision เพื่อตรวจสอบอุณหภูมิ ความชื้น และการเติบโตของเห็ด' : 'Smart Mushroom Farm IoT system integrating sensors and computer vision to monitor temperature, humidity, and mushroom growth.'}</span>
                 </div>
                 <div className="resume-list-item">
                   <span className="resume-arrow"><FaArrowRight size={12} className="mt-1.5" /></span>
-                  <span>Developed a generic Medicine Alarm system using IoT microcontrollers to notify patients for timely medication adherence.</span>
+                  <span>{language === 'th' ? 'พัฒนาระบบแจ้งเตือนการกินยา (Medicine Alarm) ด้วยไมโครคอนโทรลเลอร์ IoT เพื่อแจ้งเตือนผู้ป่วยให้ทานยาตรงเวลา' : 'Developed a generic Medicine Alarm system using IoT microcontrollers to notify patients for timely medication adherence.'}</span>
                 </div>
                 <div className="resume-list-item">
                   <span className="resume-arrow"><FaArrowRight size={12} className="mt-1.5" /></span>
-                  <span>Created a dedicated Mushroom Temperature Monitor to log and display real-time environmental data for agricultural optimization.</span>
+                  <span>{language === 'th' ? 'สร้างเครื่องมือตรวจสอบอุณหภูมิเห็ด เพื่อบันทึกและแสดงข้อมูลสภาพแวดล้อมแบบเรียลไทม์' : 'Created a dedicated Mushroom Temperature Monitor to log and display real-time environmental data for agricultural optimization.'}</span>
                 </div>
 
                 {/* IoT Image Gallery */}
                 <div className="mt-4 pt-4 border-t border-dashed border-gray-100">
                   <h4 className="text-lg font-semibold text-gray-500 mb-3 flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span>
-                    Project Gallery
+                    {language === 'th' ? 'แกลเลอรีผลงาน' : 'Project Gallery'}
                   </h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {[
@@ -194,19 +198,19 @@ const ProjectWorking = () => {
             {/* Web Framework Project */}
             <div>
               <div className="flex justify-between items-baseline mb-3">
-                <h3 className="font-bold text-2xl">Project & Working Web-Framework</h3>
+                <h3 className="font-bold text-2xl">{language === 'th' ? 'โปรเจกต์และเฟรมเวิร์กเว็บ' : 'Project & Working Web-Framework'}</h3>
                 <span className="resume-date">[2021-2024]</span>
               </div>
               <div className="space-y-2">
                 <div className="resume-list-item">
                   <span className="resume-arrow"><FaArrowRight size={12} className="mt-1.5" /></span>
-                  <span>The person has experience working on ERP systems for various Industries using Odoo, Python, Java, and SQL with PostgreSQL. They have also Created games using Pygame and Java, cloned websites Adwoo and Tinner using HTML, CSS, and PHP, and built a React website for mathematical operations and graphing. Additionally, they have created a website using Firebase, React, and NOSQL for AEKI.</span>
+                  <span>{language === 'th' ? 'มีประสบการณ์พัฒนาระบบ ERP สำหรับหลากหลายอุตสาหกรรมด้วย Odoo, Python, Java และ PostgreSQL นอกจากนี้ยังสร้างเกมด้วย Pygame และ Java, โคลนเว็บไซต์ Adwoo และ Tinner ด้วย HTML, CSS และ PHP, พัฒนาเว็บไซต์คำนวณคณิตศาสตร์และพล็อตกราฟด้วย React รวมถึงพัฒนาเว็บไซต์สำหรับ AEKI โดยใช้ Firebase, React และ NoSQL' : 'The person has experience working on ERP systems for various Industries using Odoo, Python, Java, and SQL with PostgreSQL. They have also Created games using Pygame and Java, cloned websites Adwoo and Tinner using HTML, CSS, and PHP, and built a React website for mathematical operations and graphing. Additionally, they have created a website using Firebase, React, and NOSQL for AEKI.'}</span>
                 </div>
                 {/* Web Framework Image Gallery */}
                 <div className="mt-4 pt-4 border-t border-dashed border-gray-100">
                   <h4 className="text-lg font-semibold text-gray-500 mb-3 flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span>
-                    Project Gallery
+                    {language === 'th' ? 'แกลเลอรีผลงาน' : 'Project Gallery'}
                   </h4>
 
                   {/* Featured Image (Before Grid) */}
@@ -310,23 +314,23 @@ const ProjectWorking = () => {
             {/* Project AI */}
             <div>
               <div className="flex justify-between items-baseline mb-3">
-                <h3 className="font-bold text-2xl">Project AI</h3>
+                <h3 className="font-bold text-2xl">{language === 'th' ? 'โปรเจกต์ AI' : 'Project AI'}</h3>
                 <span className="resume-date">[2023-2025]</span>
               </div>
               <div className="space-y-2">
                 <div className="resume-list-item">
                   <span className="resume-arrow"><FaArrowRight size={12} className="mt-1.5" /></span>
-                  <span>Create a Python Kaggle kernel using an XCBoost-trained model and the pickle module to forecast wild blueberry yield, and deploy Streamlit web apps to display production.</span>
+                  <span>{language === 'th' ? 'สร้าง Python Kaggle kernel โดยใช้โมเดล XCBoost และ module pickle เพื่อทำนายผลผลิตบลูเบอร์รี่ป่า และ deploy บน Streamlit web app' : 'Create a Python Kaggle kernel using an XCBoost-trained model and the pickle module to forecast wild blueberry yield, and deploy Streamlit web apps to display production.'}</span>
                 </div>
                 <div className="resume-list-item">
                   <span className="resume-arrow"><FaArrowRight size={12} className="mt-1.5" /></span>
-                  <span>This project uses robotics, IoT, and YOLOv8 (Roboflow) with React/Flutter AI dashboards to monitor mushroom growth, reduce contamination, and enable remote management.</span>
+                  <span>{language === 'th' ? 'โปรเจกต์นี้ใช้หุ่นยนต์, IoT และ YOLOv8 (Roboflow) ร่วมกับ React/Flutter AI dashboard เพื่อตรวจสอบการเติบโตของเห็ด ลดการปนเปื้อน และจัดการจากระยะไกล' : 'This project uses robotics, IoT, and YOLOv8 (Roboflow) with React/Flutter AI dashboards to monitor mushroom growth, reduce contamination, and enable remote management.'}</span>
                 </div>
                 {/* Ai Image Gallery */}
                 <div className="mt-4 pt-4 border-t border-dashed border-gray-100">
                   <h4 className="text-lg font-semibold text-gray-500 mb-3 flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span>
-                    Project Gallery
+                    {language === 'th' ? 'แกลเลอรีผลงาน' : 'Project Gallery'}
                   </h4>
 
                   {/* Featured Image (Before Grid) */}
@@ -388,17 +392,17 @@ const ProjectWorking = () => {
             {/* Project UX/UI */}
             <div>
               <div className="flex justify-between items-baseline mb-3">
-                <h3 className="font-bold text-2xl">Project UX/UI</h3>
+                <h3 className="font-bold text-2xl">{language === 'th' ? 'โปรเจกต์ UX/UI' : 'Project UX/UI'}</h3>
                 <span className="resume-date">[2021-2024]</span>
               </div>
               <div className="space-y-2">
                 <div className="resume-list-item">
                   <span className="resume-arrow"><FaArrowRight size={12} className="mt-1.5" /></span>
-                  <span>Use Adobe XD to create a prototype for an app for flower shop and one for a handyman, and other projects.</span>
+                  <span>{language === 'th' ? 'ใช้ Adobe XD สร้าง Prototype แอปพลิเคชันร้านดอกไม้และช่างซ่อมบำรุง และโปรเจกต์อื่นๆ' : 'Use Adobe XD to create a prototype for an app for flower shop and one for a handyman, and other projects.'}</span>
                 </div>
                 <div className="resume-list-item">
                   <span className="resume-arrow"><FaArrowRight size={12} className="mt-1.5" /></span>
-                  <span>Use Figma to create a web app prototype for a restaurant warehouse management system, and other projects.</span>
+                  <span>{language === 'th' ? 'ใช้ Figma สร้าง Prototype เว็บแอปพลิเคชันระบบจัดการคลังสินค้าร้านอาหาร และโปรเจกต์อื่นๆ' : 'Use Figma to create a web app prototype for a restaurant warehouse management system, and other projects.'}</span>
                 </div>
               </div>
             </div>

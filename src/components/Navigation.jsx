@@ -1,10 +1,12 @@
 import { Link, useLocation } from 'react-router-dom'
 import { useState } from 'react'
 import { FaBars, FaTimes } from 'react-icons/fa'
+import { useLanguage } from '../context/LanguageContext'
 
 const Navigation = () => {
   const location = useLocation()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const { language, toggleLanguage } = useLanguage()
 
   const isActive = (path) => {
     return location.pathname === path
@@ -17,18 +19,31 @@ const Navigation = () => {
   const activeClasses = "text-green-700 border-b-2 border-green-600"
   const inactiveClasses = "text-gray-500 hover:text-green-600 transition-colors"
 
+  const menuItems = {
+    personalSummary: language === 'th' ? 'ข้อมูลส่วนตัว' : 'Personal Summary',
+    projectWorking: language === 'th' ? 'โปรเจกต์และการทำงาน' : 'Project and Working',
+    education: language === 'th' ? 'ระดับการศึกษา' : 'Education Level',
+    hardSkills: language === 'th' ? 'ทักษะความสามารถ' : 'Hard Skills',
+  }
+
   return (
     <nav className="bg-white sticky top-0 z-50 border-b border-gray-100 mb-8">
       <div className="max-w-7xl mx-auto px-5 py-5 flex flex-wrap justify-between items-center">
         <div className="flex justify-between items-center w-full md:w-auto">
           <Link to="/" className="no-underline group flex items-center gap-3">
             <img src="/favicon.png" alt="Logo" className="h-10 w-10 object-contain" />
-            <h1 className="text-xl font-bold text-gray-900 m-0 uppercase tracking-wider">
+            <h1 className="text-3xl font-bold text-gray-900 m-0 uppercase tracking-wider">
               Nattaphat Jangponak
             </h1>
           </Link>
           {/* Hamburger Icon */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center gap-4">
+            <button
+              onClick={toggleLanguage}
+              className="px-3 py-1 rounded-full border border-gray-300 text-lg font-bold hover:bg-gray-50 transition-colors"
+            >
+              {language === 'th' ? 'TH' : 'EN'}
+            </button>
             <button onClick={toggleMenu} className="text-2xl text-gray-700 focus:outline-none">
               {isMenuOpen ? <FaTimes /> : <FaBars />}
             </button>
@@ -39,42 +54,51 @@ const Navigation = () => {
           <li>
             <Link
               to="/personal-summary"
-              className={`px-3 py-2 text-sm font-bold uppercase tracking-wide no-underline block ${isActive('/personal-summary') ? activeClasses : inactiveClasses
+              className={`px-3 py-2 text-xl font-bold uppercase tracking-wide no-underline block ${isActive('/personal-summary') ? activeClasses : inactiveClasses
                 }`}
               onClick={() => setIsMenuOpen(false)}
             >
-              Personal Summary
+              {menuItems.personalSummary}
             </Link>
           </li>
           <li>
             <Link
               to="/project-working"
-              className={`px-3 py-2 text-sm font-bold uppercase tracking-wide no-underline block ${isActive('/project-working') ? activeClasses : inactiveClasses
+              className={`px-3 py-2 text-xl font-bold uppercase tracking-wide no-underline block ${isActive('/project-working') ? activeClasses : inactiveClasses
                 }`}
               onClick={() => setIsMenuOpen(false)}
             >
-              Project and Working
+              {menuItems.projectWorking}
             </Link>
           </li>
           <li>
             <Link
               to="/education"
-              className={`px-3 py-2 text-sm font-bold uppercase tracking-wide no-underline block ${isActive('/education') ? activeClasses : inactiveClasses
+              className={`px-3 py-2 text-xl font-bold uppercase tracking-wide no-underline block ${isActive('/education') ? activeClasses : inactiveClasses
                 }`}
               onClick={() => setIsMenuOpen(false)}
             >
-              Education Level
+              {menuItems.education}
             </Link>
           </li>
           <li>
             <Link
               to="/hard-skills"
-              className={`px-3 py-2 text-sm font-bold uppercase tracking-wide no-underline block ${isActive('/hard-skills') ? activeClasses : inactiveClasses
+              className={`px-3 py-2 text-xl font-bold uppercase tracking-wide no-underline block ${isActive('/hard-skills') ? activeClasses : inactiveClasses
                 }`}
               onClick={() => setIsMenuOpen(false)}
             >
-              Hard Skills
+              {menuItems.hardSkills}
             </Link>
+          </li>
+          <li className="hidden md:block">
+            <button
+              onClick={toggleLanguage}
+              className="flex items-center justify-center w-10 h-10 rounded-full border border-gray-200 text-lg font-bold hover:bg-gray-50 hover:border-green-600 hover:text-green-700 transition-all shadow-sm"
+              title={language === 'th' ? 'Switch to English' : 'เปลี่ยนเป็นภาษาไทย'}
+            >
+              {language === 'th' ? 'TH' : 'EN'}
+            </button>
           </li>
         </ul>
       </div>
@@ -83,4 +107,3 @@ const Navigation = () => {
 }
 
 export default Navigation
-

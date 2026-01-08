@@ -10,6 +10,9 @@ export default {
         primary: '#4CAF50',
         secondary: '#2c3e50',
       },
+      fontFamily: {
+        sans: ['THSarabun', 'sans-serif'],
+      },
     },
   },
   plugins: [],
