@@ -65,7 +65,7 @@ const PersonalSummary = () => {
             <>
               ผมเพิ่งสำเร็จการศึกษาในสาขาวิทยาการคอมพิวเตอร์และสารสนเทศ จากคณะวิทยาศาสตร์ประยุกต์
               ผมมีความอยากรู้อยากเห็นอย่างมากในหลักสูตรที่เกี่ยวข้องกับ Internet of Things และการพัฒนาแอปพลิเคชันบนมือถือ
-              ขณะนี้ผมกำลังมองหาที่ฝึกงานในบริษัทด้าน Internet of Things เพื่อที่จะได้ใช้ความสามารถทางเทคโนโลยีที่โดดเด่น
+              ขณะนี้ผมกำลังมองหาที่ทำงานในด้าน Internet of Things, Web หรือ AI เพื่อที่จะได้ใช้ความสามารถทางเทคโนโลยีที่โดดเด่น
               และความเชี่ยวชาญทางวิชาการที่ได้รับมาให้เกิดประโยชน์สูงสุด ผมมุ่งมั่นที่จะพัฒนาทักษะการเขียนโปรแกรม ความคิดสร้างสรรค์
               และความสามารถในการประยุกต์ใช้ ในขณะเดียวกันก็กระตือรือร้นที่จะหาโอกาสในการเข้าร่วมโครงการที่ผมหลงใหล
               และได้รับประสบการณ์อันล้ำค่าเพื่อผลงานการทำงานที่ดียิ่งขึ้น
@@ -74,7 +74,7 @@ const PersonalSummary = () => {
             <>
               I am a recent graduate in Computer and Information Science at the Faculty of Applied Science.
               I've developed an intense curiosity in coursework related to the Internet of Things and mobile application development.
-              I'm currently searching for an Internship in an Internet of Things company so I could put my outstanding technological talents
+              I'm currently searching for a job in Internet of Things, Web Development, or AI so I could put my outstanding technological talents
               and gained academic expertise to the best use. I am committed to improving my programming, creativity, and applied abilities
               while actively seeking out ways to participate in my passion projects and gain priceless experience for improved job output.
             </>
