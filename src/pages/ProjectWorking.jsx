@@ -151,7 +151,7 @@ const ProjectWorking = () => {
 
                 {/* IoT Image Gallery */}
                 <div className="mt-4 pt-4 border-t border-dashed border-gray-100">
-                  <h4 className="text-lg font-semibold text-gray-500 mb-3 flex items-center gap-2">
+                  <h4 className="text-2xl font-semibold text-gray-500 mb-3 flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span>
                     {language === 'th' ? 'แกลเลอรีผลงาน' : 'Project Gallery'}
                   </h4>
@@ -184,8 +184,8 @@ const ProjectWorking = () => {
                         </div>
 
                         {/* Label Bar */}
-                        <div className="absolute bottom-0 inset-x-0 bg-white/90 backdrop-blur-sm p-2 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                          <p className="text-sm font-semibold text-center text-gray-800 truncate px-2">{img.label}</p>
+                        <div className="absolute bottom-0 inset-x-0 bg-white/90 backdrop-blur-sm p-3 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                          <p className="text-xl font-bold text-center text-gray-800 truncate px-2">{img.label}</p>
                         </div>
                       </div>
                     ))}
@@ -208,7 +208,7 @@ const ProjectWorking = () => {
                 </div>
                 {/* Web Framework Image Gallery */}
                 <div className="mt-4 pt-4 border-t border-dashed border-gray-100">
-                  <h4 className="text-lg font-semibold text-gray-500 mb-3 flex items-center gap-2">
+                  <h4 className="text-2xl font-semibold text-gray-500 mb-3 flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span>
                     {language === 'th' ? 'แกลเลอรีผลงาน' : 'Project Gallery'}
                   </h4>
@@ -228,8 +228,8 @@ const ProjectWorking = () => {
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                       <FaEye className="text-white text-3xl drop-shadow-md transform scale-50 group-hover:scale-100 transition-transform" />
                     </div>
-                    <div className="absolute bottom-0 inset-x-0 bg-white/90 backdrop-blur-sm p-2 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                      <p className="text-sm font-semibold text-center text-gray-800 truncate px-2">Web Mushroom Monitoring System</p>
+                    <div className="absolute bottom-0 inset-x-0 bg-white/90 backdrop-blur-sm p-3 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                      <p className="text-xl font-bold text-center text-gray-800 truncate px-2">Web Mushroom Monitoring System</p>
                     </div>
                   </div>
 
@@ -248,8 +248,8 @@ const ProjectWorking = () => {
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                       <FaEye className="text-white text-3xl drop-shadow-md transform scale-50 group-hover:scale-100 transition-transform" />
                     </div>
-                    <div className="absolute bottom-0 inset-x-0 bg-white/90 backdrop-blur-sm p-2 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                      <p className="text-sm font-semibold text-center text-gray-800 truncate px-2">Web AEKI</p>
+                    <div className="absolute bottom-0 inset-x-0 bg-white/90 backdrop-blur-sm p-3 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                      <p className="text-xl font-bold text-center text-gray-800 truncate px-2">Web AEKI</p>
                     </div>
                   </div>
 
@@ -279,8 +279,8 @@ const ProjectWorking = () => {
                         </div>
 
                         {/* Label Bar */}
-                        <div className="absolute bottom-0 inset-x-0 bg-white/90 backdrop-blur-sm p-2 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                          <p className="text-sm font-semibold text-center text-gray-800 truncate px-2">{img.label}</p>
+                        <div className="absolute bottom-0 inset-x-0 bg-white/90 backdrop-blur-sm p-3 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                          <p className="text-xl font-bold text-center text-gray-800 truncate px-2">{img.label}</p>
                         </div>
                       </div>
                     ))}
@@ -301,8 +301,8 @@ const ProjectWorking = () => {
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                       <FaEye className="text-white text-3xl drop-shadow-md transform scale-50 group-hover:scale-100 transition-transform" />
                     </div>
-                    <div className="absolute bottom-0 inset-x-0 bg-white/90 backdrop-blur-sm p-2 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                      <p className="text-sm font-semibold text-center text-gray-800 truncate px-2">List Mobile Flutter App</p>
+                    <div className="absolute bottom-0 inset-x-0 bg-white/90 backdrop-blur-sm p-3 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                      <p className="text-xl font-bold text-center text-gray-800 truncate px-2">List Mobile Flutter App</p>
                     </div>
                   </div>
 
@@ -328,7 +328,7 @@ const ProjectWorking = () => {
                 </div>
                 {/* Ai Image Gallery */}
                 <div className="mt-4 pt-4 border-t border-dashed border-gray-100">
-                  <h4 className="text-lg font-semibold text-gray-500 mb-3 flex items-center gap-2">
+                  <h4 className="text-2xl font-semibold text-gray-500 mb-3 flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span>
                     {language === 'th' ? 'แกลเลอรีผลงาน' : 'Project Gallery'}
                   </h4>
@@ -348,8 +348,8 @@ const ProjectWorking = () => {
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                       <FaEye className="text-white text-3xl drop-shadow-md transform scale-50 group-hover:scale-100 transition-transform" />
                     </div>
-                    <div className="absolute bottom-0 inset-x-0 bg-white/90 backdrop-blur-sm p-2 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                      <p className="text-sm font-semibold text-center text-gray-800 truncate px-2">Prediction of wild blueberry yield</p>
+                    <div className="absolute bottom-0 inset-x-0 bg-white/90 backdrop-blur-sm p-3 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                      <p className="text-xl font-bold text-center text-gray-800 truncate px-2">Prediction of wild blueberry yield</p>
                     </div>
                   </div>
 
@@ -379,8 +379,8 @@ const ProjectWorking = () => {
                         </div>
 
                         {/* Label Bar */}
-                        <div className="absolute bottom-0 inset-x-0 bg-white/90 backdrop-blur-sm p-2 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                          <p className="text-sm font-semibold text-center text-gray-800 truncate px-2">{img.label}</p>
+                        <div className="absolute bottom-0 inset-x-0 bg-white/90 backdrop-blur-sm p-3 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                          <p className="text-xl font-bold text-center text-gray-800 truncate px-2">{img.label}</p>
                         </div>
                       </div>
                     ))}
