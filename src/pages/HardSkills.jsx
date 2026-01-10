@@ -1,188 +1,175 @@
 import { FaCog, FaUserCog, FaArrowRight, FaJava, FaPython, FaHtml5, FaCss3Alt, FaJs, FaReact, FaVuejs, FaAndroid, FaEye, FaGitAlt, FaGithub, FaFigma, FaRaspberryPi } from 'react-icons/fa';
 import { SiCplusplus, SiTypescript, SiFlutter, SiAdobexd, SiDocker, SiFirebase, SiPostgresql, SiMysql, SiArduino, SiNodered, SiHomeassistant } from 'react-icons/si';
 import { useLanguage } from '../context/LanguageContext';
+import ScrollReveal from '../components/ScrollReveal';
+import KineticText from '../components/KineticText';
+import TiltCard from '../components/TiltCard';
 
 const HardSkills = () => {
   const { language } = useLanguage();
+
+  // Skill data organized for Bento Grid
+  const programmingSkills = [
+    { icon: FaJava, name: 'Java (OOP)', color: 'text-red-500', size: '2x1' },
+    { icon: FaPython, name: 'Python', color: 'text-blue-500', size: '1x1' },
+    { icon: SiCplusplus, name: 'C/C++', color: 'text-blue-700', size: '1x1' },
+    { icons: [{ Icon: FaHtml5, color: 'text-orange-600' }, { Icon: FaCss3Alt, color: 'text-blue-600' }], name: 'HTML5 / CSS', size: '1x1' },
+    { icon: FaJs, name: 'Javascript', color: 'text-yellow-500', size: '1x1' },
+    { icon: SiTypescript, name: 'Typescript', color: 'text-blue-600', size: '2x1' },
+  ];
+
+  const toolsFrameworks = [
+    { icons: [{ Icon: FaReact, color: 'text-cyan-400' }, { Icon: FaVuejs, color: 'text-green-500' }], name: 'React / Vue', size: '2x1' },
+    { icons: [{ Icon: SiFlutter, color: 'text-cyan-500' }, { Icon: FaAndroid, color: 'text-green-600' }], name: 'Flutter / Android', size: '1x1' },
+    { icon: FaEye, name: 'Computer Vision', color: 'text-gray-600', size: '1x1' },
+    { icons: [{ Icon: FaGitAlt, color: 'text-red-500' }, { Icon: FaGithub, color: 'text-gray-800' }], name: 'Git / GitHub', size: '1x1' },
+    { icons: [{ Icon: FaFigma, color: 'text-purple-500' }, { Icon: SiAdobexd, color: 'text-pink-700' }], name: 'Figma / Adobe XD', size: '1x1' },
+  ];
+
+  const serverSkills = [
+    { icon: SiDocker, name: 'Docker', color: 'text-blue-500', size: '1x1' },
+    { icon: SiFirebase, name: 'Firebase', color: 'text-yellow-500', size: '1x1' },
+    { icon: SiPostgresql, name: 'PostgreSQL', color: 'text-blue-400', size: '1x1' },
+    { icon: SiMysql, name: 'MySQL', color: 'text-blue-600', size: '1x1' },
+  ];
+
+  const edgeSkills = [
+    { icon: FaRaspberryPi, name: 'Raspberry-pi', color: 'text-red-600', size: '2x1' },
+    { icon: SiArduino, name: 'Arduino', color: 'text-teal-600', size: '1x1' },
+    { icon: SiNodered, name: 'Node-red', color: 'text-red-700', size: '1x1' },
+    { icon: SiHomeassistant, name: 'Home Assistant', color: 'text-blue-500', size: '2x1' },
+  ];
+
+  const SkillCard = ({ skill, index }) => {
+    const Icon = skill.icon;
+    const icons = skill.icons;
+
+    return (
+      <TiltCard
+        tiltIntensity={10}
+        className={`skill-card glass-card ${skill.size === '2x1' ? 'bento-item-2x1' :
+            skill.size === '1x2' ? 'bento-item-1x2' :
+              skill.size === '2x2' ? 'bento-item-2x2' : 'bento-item-1x1'
+          }`}
+      >
+        <div className="flex items-center gap-3 h-full">
+          {icons ? (
+            <div className="flex gap-2">
+              {icons.map((iconItem, i) => (
+                <iconItem.Icon key={i} className={`text-2xl ${iconItem.color} group-hover:scale-110 transition-transform`} />
+              ))}
+            </div>
+          ) : (
+            <Icon className={`text-2xl ${skill.color} group-hover:scale-110 transition-transform`} />
+          )}
+          <span className="font-bold text-xl text-gray-700">{skill.name}</span>
+        </div>
+      </TiltCard>
+    );
+  };
+
+  const SkillSection = ({ title, skills, delay }) => (
+    <ScrollReveal animation="fadeUp" delay={delay}>
+      <div className="mb-8">
+        <div className="flex gap-2 items-center mb-4">
+          <span className="resume-arrow"><FaArrowRight /></span>
+          <h3 className="text-green-800 font-bold text-2xl">{title}</h3>
+        </div>
+        <div className="bento-grid">
+          {skills.map((skill, index) => (
+            <ScrollReveal key={index} animation="scale" delay={delay + (index * 0.05)}>
+              <SkillCard skill={skill} index={index} />
+            </ScrollReveal>
+          ))}
+        </div>
+      </div>
+    </ScrollReveal>
+  );
+
   return (
-    <div className="max-w-7xl mx-auto p-8 animate-slide-up">
-      <div className="resume-card">
-        <div className="resume-section-header">
-          <div className="resume-icon-box">
-            <FaCog />
-          </div>
-          <h2 className="resume-section-title">{language === 'th' ? 'ทักษะความสามารถ' : 'Hard Skills'}</h2>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Left Column */}
-          <div className="space-y-6">
-            {/* Programming Language */}
-            <div>
-              <div className="flex gap-2 items-center mb-2">
-                <span className="resume-arrow"><FaArrowRight /></span>
-                <h3 className="text-green-800 font-bold">{language === 'th' ? 'ภาษาโปรแกรม' : 'Programming Language'}</h3>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pl-2">
-                <div className="flex items-center gap-3 p-3 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md hover:border-green-200 transition-all hover:-translate-y-1 group">
-                  <FaJava className="text-2xl text-red-500 group-hover:scale-110 transition-transform" />
-                  <span className="font-bold text-2xl text-gray-700">Java (OOP)</span>
-                </div>
-                <div className="flex items-center gap-3 p-3 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md hover:border-green-200 transition-all hover:-translate-y-1 group">
-                  <FaPython className="text-2xl text-blue-500 group-hover:scale-110 transition-transform" />
-                  <span className="font-bold text-2xl text-gray-700">Python</span>
-                </div>
-                <div className="flex items-center gap-3 p-3 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md hover:border-green-200 transition-all hover:-translate-y-1 group">
-                  <SiCplusplus className="text-2xl text-blue-700 group-hover:scale-110 transition-transform" />
-                  <span className="font-bold text-2xl text-gray-700">C/C++</span>
-                </div>
-                <div className="flex items-center gap-3 p-3 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md hover:border-green-200 transition-all hover:-translate-y-1 group">
-                  <div className="flex gap-1">
-                    <FaHtml5 className="text-2xl text-orange-600 group-hover:scale-110 transition-transform" />
-                    <span className="text-gray-300">/</span>
-                    <FaCss3Alt className="text-2xl text-blue-600 group-hover:scale-110 transition-transform" />
-                  </div>
-                  <span className="font-bold text-2xl text-gray-700">HTML5 / CSS</span>
-                </div>
-                <div className="flex items-center gap-3 p-3 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md hover:border-green-200 transition-all hover:-translate-y-1 group">
-                  <FaJs className="text-2xl text-yellow-500 group-hover:scale-110 transition-transform" />
-                  <span className="font-bold text-2xl text-gray-700">Javascript</span>
-                </div>
-                <div className="flex items-center gap-3 p-3 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md hover:border-green-200 transition-all hover:-translate-y-1 group">
-                  <SiTypescript className="text-2xl text-blue-600 group-hover:scale-110 transition-transform" />
-                  <span className="font-bold text-2xl text-gray-700">Typescript</span>
-                </div>
-              </div>
+    <div className="max-w-7xl mx-auto p-8">
+      {/* Hard Skills Card */}
+      <ScrollReveal animation="fadeUp" delay={0.1}>
+        <div className="resume-card glass-card">
+          <div className="resume-section-header">
+            <div className="resume-icon-box micro-hover">
+              <FaCog className="animate-spin" style={{ animationDuration: '8s' }} />
             </div>
-
-            {/* Tools and Framework */}
-            <div>
-              <div className="flex gap-2 items-center mb-2">
-                <span className="resume-arrow"><FaArrowRight /></span>
-                <h3 className="text-green-800 font-bold">{language === 'th' ? 'เครื่องมือและเฟรมเวิร์ก' : 'Tools and Framework'}</h3>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pl-2">
-                <div className="flex items-center gap-3 p-3 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md hover:border-green-200 transition-all hover:-translate-y-1 group">
-                  <div className="flex gap-1">
-                    <FaReact className="text-2xl text-cyan-400 group-hover:scale-110 transition-transform" />
-                    <span className="text-gray-300">/</span>
-                    <FaVuejs className="text-2xl text-green-500 group-hover:scale-110 transition-transform" />
-                  </div>
-                  <span className="font-bold text-2xl text-gray-700">React / Vue</span>
-                </div>
-                <div className="flex items-center gap-3 p-3 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md hover:border-green-200 transition-all hover:-translate-y-1 group">
-                  <div className="flex gap-1">
-                    <SiFlutter className="text-2xl text-cyan-500 group-hover:scale-110 transition-transform" />
-                    <span className="text-gray-300">/</span>
-                    <FaAndroid className="text-2xl text-green-600 group-hover:scale-110 transition-transform" />
-                  </div>
-                  <span className="font-bold text-2xl text-gray-700">Flutter / Android</span>
-                </div>
-                <div className="flex items-center gap-3 p-3 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md hover:border-green-200 transition-all hover:-translate-y-1 group">
-                  <FaEye className="text-2xl text-gray-600 group-hover:scale-110 transition-transform" />
-                  <span className="font-bold text-2xl text-gray-700">Computer Vision</span>
-                </div>
-                <div className="flex items-center gap-3 p-3 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md hover:border-green-200 transition-all hover:-translate-y-1 group">
-                  <div className="flex gap-1">
-                    <FaGitAlt className="text-2xl text-red-500 group-hover:scale-110 transition-transform" />
-                    <span className="text-gray-300">/</span>
-                    <FaGithub className="text-2xl text-gray-800 group-hover:scale-110 transition-transform" />
-                  </div>
-                  <span className="font-bold text-2xl text-gray-700">Git / GitHub</span>
-                </div>
-                <div className="flex items-center gap-3 p-3 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md hover:border-green-200 transition-all hover:-translate-y-1 group">
-                  <div className="flex gap-1">
-                    <FaFigma className="text-2xl text-purple-500 group-hover:scale-110 transition-transform" />
-                    <span className="text-gray-300">/</span>
-                    <SiAdobexd className="text-2xl text-pink-700 group-hover:scale-110 transition-transform" />
-                  </div>
-                  <span className="font-bold text-2xl text-gray-700">Figma / Adobe XD</span>
-                </div>
-              </div>
-            </div>
+            <h2 className="resume-section-title">
+              <KineticText
+                text={language === 'th' ? 'ทักษะความสามารถ' : 'Hard Skills'}
+                animation="bounce"
+                staggerDelay={0.04}
+              />
+            </h2>
           </div>
 
-          {/* Right Column */}
-          <div className="space-y-6">
-            {/* Server */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Left Column */}
             <div>
-              <div className="flex gap-2 items-center mb-2">
-                <span className="resume-arrow"><FaArrowRight /></span>
-                <h3 className="text-green-800 font-bold">{language === 'th' ? 'เซิร์ฟเวอร์' : 'Server'}</h3>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pl-2">
-                <div className="flex items-center gap-3 p-3 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md hover:border-green-200 transition-all hover:-translate-y-1 group">
-                  <SiDocker className="text-2xl text-blue-500 group-hover:scale-110 transition-transform" />
-                  <span className="font-bold text-2xl text-gray-700">Docker</span>
-                </div>
-                <div className="flex items-center gap-3 p-3 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md hover:border-green-200 transition-all hover:-translate-y-1 group">
-                  <SiFirebase className="text-2xl text-yellow-500 group-hover:scale-110 transition-transform" />
-                  <span className="font-bold text-2xl text-gray-700">Firebase</span>
-                </div>
-                <div className="flex items-center gap-3 p-3 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md hover:border-green-200 transition-all hover:-translate-y-1 group">
-                  <SiPostgresql className="text-2xl text-blue-400 group-hover:scale-110 transition-transform" />
-                  <span className="font-bold text-2xl text-gray-700">PostgreSQL</span>
-                </div>
-                <div className="flex items-center gap-3 p-3 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md hover:border-green-200 transition-all hover:-translate-y-1 group">
-                  <SiMysql className="text-2xl text-blue-600 group-hover:scale-110 transition-transform" />
-                  <span className="font-bold text-2xl text-gray-700">MySQL</span>
-                </div>
-              </div>
+              <SkillSection
+                title={language === 'th' ? 'ภาษาโปรแกรม' : 'Programming Language'}
+                skills={programmingSkills}
+                delay={0.2}
+              />
+              <SkillSection
+                title={language === 'th' ? 'เครื่องมือและเฟรมเวิร์ก' : 'Tools and Framework'}
+                skills={toolsFrameworks}
+                delay={0.3}
+              />
             </div>
 
-            {/* Edge Computing */}
+            {/* Right Column */}
             <div>
-              <div className="flex gap-2 items-center mb-2">
-                <span className="resume-arrow"><FaArrowRight /></span>
-                <h3 className="text-green-800 font-bold">{language === 'th' ? 'การประมวลผลแบบ Edge' : 'Edge Computing'}</h3>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pl-2">
-                <div className="flex items-center gap-3 p-3 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md hover:border-green-200 transition-all hover:-translate-y-1 group">
-                  <FaRaspberryPi className="text-2xl text-red-600 group-hover:scale-110 transition-transform" />
-                  <span className="font-bold text-2xl text-gray-700">Raspberry-pi</span>
-                </div>
-                <div className="flex items-center gap-3 p-3 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md hover:border-green-200 transition-all hover:-translate-y-1 group">
-                  <SiArduino className="text-2xl text-teal-600 group-hover:scale-110 transition-transform" />
-                  <span className="font-bold text-2xl text-gray-700">Arduino</span>
-                </div>
-                <div className="flex items-center gap-3 p-3 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md hover:border-green-200 transition-all hover:-translate-y-1 group">
-                  <SiNodered className="text-2xl text-red-700 group-hover:scale-110 transition-transform" />
-                  <span className="font-bold text-2xl text-gray-700">Node-red</span>
-                </div>
-                <div className="flex items-center gap-3 p-3 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md hover:border-green-200 transition-all hover:-translate-y-1 group">
-                  <SiHomeassistant className="text-2xl text-blue-500 group-hover:scale-110 transition-transform" />
-                  <span className="font-bold text-2xl text-gray-700">Home Assistant</span>
-                </div>
-              </div>
+              <SkillSection
+                title={language === 'th' ? 'เซิร์ฟเวอร์' : 'Server'}
+                skills={serverSkills}
+                delay={0.4}
+              />
+              <SkillSection
+                title={language === 'th' ? 'การประมวลผลแบบ Edge' : 'Edge Computing'}
+                skills={edgeSkills}
+                delay={0.5}
+              />
             </div>
           </div>
         </div>
-      </div>
+      </ScrollReveal>
 
-      <div className="resume-card">
-        <div className="resume-section-header">
-          <div className="resume-icon-box">
-            <FaUserCog />
+      {/* Soft Skills Card */}
+      <ScrollReveal animation="fadeUp" delay={0.5}>
+        <div className="resume-card glass-card">
+          <div className="resume-section-header">
+            <div className="resume-icon-box micro-hover">
+              <FaUserCog />
+            </div>
+            <h2 className="resume-section-title">
+              <KineticText
+                text={language === 'th' ? 'ทักษะทางสังคม (Soft Skills)' : 'Soft Skills'}
+                animation="stagger"
+                staggerDelay={0.03}
+              />
+            </h2>
           </div>
-          <h2 className="resume-section-title">{language === 'th' ? 'ทักษะทางสังคม (Soft Skills)' : 'Soft Skills'}</h2>
+
+          <div className="space-y-4">
+            {[
+              { text: language === 'th' ? 'ความคิดสร้างสรรค์' : 'Creativity', delay: 0.6 },
+              { text: language === 'th' ? 'การทำงานเป็นทีมและความร่วมมือ' : 'Teamwork and Collaboration', delay: 0.7 },
+              { text: language === 'th' ? 'ความยืดหยุ่นและการปรับตัว' : 'Flexibility and Adaptability', delay: 0.8 },
+            ].map((item, index) => (
+              <ScrollReveal key={index} animation="fadeLeft" delay={item.delay}>
+                <div className="flex gap-3 items-center text-gray-700 text-2xl font-bold glass-card p-4 rounded-xl micro-hover group">
+                  <span className="resume-arrow group-hover:translate-x-2 transition-transform">
+                    <FaArrowRight size={24} />
+                  </span>
+                  <span className="group-hover:text-green-700 transition-colors">{item.text}</span>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
-
-        <div className="space-y-4">
-          <div className="flex gap-3 items-center text-gray-700 text-2xl font-bold">
-            <span className="resume-arrow"><FaArrowRight size={24} /></span>
-            <span>{language === 'th' ? 'ความคิดสร้างสรรค์' : 'Creativity'}</span>
-          </div>
-          <div className="flex gap-3 items-center text-gray-700 text-2xl font-bold">
-            <span className="resume-arrow"><FaArrowRight size={24} /></span>
-            <span>{language === 'th' ? 'การทำงานเป็นทีมและความร่วมมือ' : 'Teamwork and Collaboration'}</span>
-          </div>
-          <div className="flex gap-3 items-center text-gray-700 text-2xl font-bold">
-            <span className="resume-arrow"><FaArrowRight size={24} /></span>
-            <span>{language === 'th' ? 'ความยืดหยุ่นและการปรับตัว' : 'Flexibility and Adaptability'}</span>
-          </div>
-        </div>
-
-      </div>
+      </ScrollReveal>
     </div>
   )
 }

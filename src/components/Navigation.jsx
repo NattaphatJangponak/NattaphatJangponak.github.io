@@ -27,12 +27,15 @@ const Navigation = () => {
   }
 
   return (
-    <nav className="bg-white sticky top-0 z-50 border-b border-gray-100 mb-8">
+    <nav className="glass-nav sticky top-0 z-50 mb-8">
       <div className="max-w-7xl mx-auto px-5 py-5 flex flex-wrap justify-between items-center">
         <div className="flex justify-between items-center w-full md:w-auto">
           <Link to="/" className="no-underline group flex items-center gap-3">
-            <img src="/favicon.png" alt="Logo" className="h-10 w-10 object-contain" />
-            <h1 className="text-3xl font-bold text-gray-900 m-0 uppercase tracking-wider">
+            <div className="relative">
+              <div className="absolute inset-0 bg-green-500/20 rounded-full blur-md group-hover:blur-lg transition-all duration-300"></div>
+              <img src="/favicon.png" alt="Logo" className="relative h-10 w-10 object-contain group-hover:scale-110 transition-transform duration-300" />
+            </div>
+            <h1 className="text-3xl font-bold text-gray-900 m-0 uppercase tracking-wider gradient-text-shine">
               Nattaphat Jangponak
             </h1>
           </Link>
@@ -40,11 +43,11 @@ const Navigation = () => {
           <div className="md:hidden flex items-center gap-4">
             <button
               onClick={toggleLanguage}
-              className="px-3 py-1 rounded-full border border-gray-300 text-lg font-bold hover:bg-gray-50 transition-colors"
+              className="px-3 py-1 rounded-full border border-gray-300 text-lg font-bold hover:bg-gray-50 hover:border-green-500 transition-all duration-300 micro-press"
             >
               {language === 'th' ? 'TH' : 'EN'}
             </button>
-            <button onClick={toggleMenu} className="text-2xl text-gray-700 focus:outline-none">
+            <button onClick={toggleMenu} className="text-2xl text-gray-700 focus:outline-none micro-press">
               {isMenuOpen ? <FaTimes /> : <FaBars />}
             </button>
           </div>
@@ -54,7 +57,7 @@ const Navigation = () => {
           <li>
             <Link
               to="/personal-summary"
-              className={`px-3 py-2 text-xl font-bold uppercase tracking-wide no-underline block ${isActive('/personal-summary') ? activeClasses : inactiveClasses
+              className={`micro-link px-3 py-2 text-xl font-bold uppercase tracking-wide no-underline block ${isActive('/personal-summary') ? activeClasses : inactiveClasses
                 }`}
               onClick={() => setIsMenuOpen(false)}
             >
@@ -64,7 +67,7 @@ const Navigation = () => {
           <li>
             <Link
               to="/project-working"
-              className={`px-3 py-2 text-xl font-bold uppercase tracking-wide no-underline block ${isActive('/project-working') ? activeClasses : inactiveClasses
+              className={`micro-link px-3 py-2 text-xl font-bold uppercase tracking-wide no-underline block ${isActive('/project-working') ? activeClasses : inactiveClasses
                 }`}
               onClick={() => setIsMenuOpen(false)}
             >
@@ -74,7 +77,7 @@ const Navigation = () => {
           <li>
             <Link
               to="/education"
-              className={`px-3 py-2 text-xl font-bold uppercase tracking-wide no-underline block ${isActive('/education') ? activeClasses : inactiveClasses
+              className={`micro-link px-3 py-2 text-xl font-bold uppercase tracking-wide no-underline block ${isActive('/education') ? activeClasses : inactiveClasses
                 }`}
               onClick={() => setIsMenuOpen(false)}
             >
@@ -84,7 +87,7 @@ const Navigation = () => {
           <li>
             <Link
               to="/hard-skills"
-              className={`px-3 py-2 text-xl font-bold uppercase tracking-wide no-underline block ${isActive('/hard-skills') ? activeClasses : inactiveClasses
+              className={`micro-link px-3 py-2 text-xl font-bold uppercase tracking-wide no-underline block ${isActive('/hard-skills') ? activeClasses : inactiveClasses
                 }`}
               onClick={() => setIsMenuOpen(false)}
             >
@@ -94,7 +97,7 @@ const Navigation = () => {
           <li className="hidden md:block">
             <button
               onClick={toggleLanguage}
-              className="flex items-center justify-center w-10 h-10 rounded-full border border-gray-200 text-lg font-bold hover:bg-gray-50 hover:border-green-600 hover:text-green-700 transition-all shadow-sm"
+              className="flex items-center justify-center w-10 h-10 rounded-full border border-gray-200 text-lg font-bold hover:bg-green-50 hover:border-green-500 hover:text-green-700 transition-all duration-300 shadow-sm micro-press micro-glow"
               title={language === 'th' ? 'Switch to English' : 'เปลี่ยนเป็นภาษาไทย'}
             >
               {language === 'th' ? 'TH' : 'EN'}
