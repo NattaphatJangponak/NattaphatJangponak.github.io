@@ -84,7 +84,7 @@ const ProjectWorking = () => {
 
   // Project Section Component
   const ProjectSection = ({ title, date, children, delay }) => (
-    <ScrollReveal animation="fadeUp" delay={delay}>
+    <ScrollReveal animation="fadeUp" delay={delay} threshold={0.02}>
       <div className="relative pl-6 border-l-4 border-green-400 mb-8">
         {/* Timeline dot */}
         <div className="absolute -left-3 top-0 w-6 h-6 rounded-full bg-gradient-to-br from-green-400 to-emerald-600 shadow-lg" />
@@ -124,7 +124,7 @@ const ProjectWorking = () => {
         </ScrollReveal>
 
         {/* Main Content Card */}
-        <ScrollReveal animation="fadeUp" delay={0.2}>
+        <ScrollReveal animation="fadeUp" delay={0.2} threshold={0.01}>
           <div className="resume-card glass-card">
             <div className="resume-section-header">
               <div className="resume-icon-box micro-hover">
